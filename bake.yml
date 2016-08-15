@@ -1,5 +1,5 @@
 - job:
-    name: yserver-stage-bake
+    name: yserver-stage-bake1
     description: 'Do not edit this job through the web!'
     project-type: freestyle
     builders:
