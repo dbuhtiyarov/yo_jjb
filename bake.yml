@@ -4,19 +4,19 @@
     project-type: freestyle
     parameters:
       - dynamic-choice-scriptler:
-      name: BRANCH
-      description: "Please specify git repository as parameter name gitURL"
-      script-id: "git_branch.groovy"
-      parameters:
-        - name: gitURL
-          value: https://github.com/dbuhtiyarov/yo_ansible_roles.git
-      remote: false
-      read-only: false
+           name: BRANCH
+           description: "Please specify git repository as parameter name gitURL"
+           script-id: "git_branch.groovy"
+           parameters:
+             - name: gitURL
+               value: https://github.com/dbuhtiyarov/yo_ansible_roles.git
+           remote: false
+           read-only: false
     scm:
       - git:
-      url: https://github.com/dbuhtiyarov/yo_ansible_roles.git
-      branches:
-        - ${BRANCH}
+           url: https://github.com/dbuhtiyarov/yo_ansible_roles.git
+           branches:
+             - ${BRANCH}
     builders:
       - shell: |
           echo "hello world1"
