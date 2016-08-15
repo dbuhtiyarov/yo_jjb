@@ -1,0 +1,24 @@
+- job:
+    name: hello_world
+    description: 'Do not edit this job through the web!'
+    project-type: freestyle
+    builders:
+      - shell: |
+          echo "hello world1"
+          df -h         
+    publishers:      
+      - email-ext:
+          recipients: ###
+          always: true
+
+- job:
+    name: test job by git
+    description: 'Do not edit this job through the web!'
+    project-type: freestyle
+    builders:
+      - shell: |
+          echo "hello world"
+    publishers:
+      - email-ext:
+          recipients: ###
+          always: true
