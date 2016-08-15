@@ -16,7 +16,7 @@
       - git:
            url: https://github.com/dbuhtiyarov/yo_ansible_roles.git
            branches:
-             - */${BRANCH}
+             - ${BRANCH}
     builders:
       - shell: |
           echo "hello world1"
