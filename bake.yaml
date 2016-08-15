@@ -1,9 +1,0 @@
-- job:
-    name: yserver-stage-bake
-    description: 'Do not edit this job through the web!'
-    project-type: freestyle
-    builders:
-      - shell: |
-          echo "hello world1"
-          df -h         
-
