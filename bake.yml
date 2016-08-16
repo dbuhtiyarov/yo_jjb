@@ -36,6 +36,9 @@
              AWS_ACCESS_KEY_ID=$PACKER_AWS_ACCESS_KEY_ID
              AWS_SECRET_ACCESS_KEY=$PACKER_AWS_SECRET_ACCESS_KEY
              BASE_AMI=$BASE_AMI
+       - inject-passwords:
+           global: true
+           mask-password-params: true
     builders:
        - shell: |
           echo "hello world1"
