@@ -17,6 +17,7 @@
            url: https://github.com/dbuhtiyarov/yo_ansible_roles.git
            branches:
              - ${BRANCH}
+           subdir: roles
       - git:
            url: https://github.com/dbuhtiyarov/packer.git
            branches:
