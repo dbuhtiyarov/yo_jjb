@@ -41,6 +41,5 @@
            mask-password-params: true
     builders:
        - shell: |
-          echo "hello world1"
-          df -h         
-
+           export PATH=$PATH:/opt/packer_dir
+           packer build -only amazon-ebs build.json
