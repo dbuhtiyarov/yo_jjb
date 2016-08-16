@@ -20,14 +20,14 @@
            basedir: roles
            wipe-workspace: false
            skip-tag: true
-           clean: true
+           clean: false
       - git:
            url: https://github.com/dbuhtiyarov/packer.git
            branches:
              - master
            wipe-workspace: false
            skip-tag: true
-           clean: true
+           clean: false
     wrappers:
        - ansicolor:
            colormap: xterm
