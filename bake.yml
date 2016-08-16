@@ -28,8 +28,16 @@
            wipe-workspace: false
            skip-tag: true
            clean: true
+    wrappers:
+       - ansicolor:
+           colormap: xterm
+       - inject:
+           properties-content: 
+             AWS_ACCESS_KEY_ID=$PACKER_AWS_ACCESS_KEY_ID
+             AWS_SECRET_ACCESS_KEY=$PACKER_AWS_SECRET_ACCESS_KEY
+             BASE_AMI=$BASE_AMI
     builders:
-      - shell: |
+       - shell: |
           echo "hello world1"
           df -h         
 
