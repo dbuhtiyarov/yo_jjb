@@ -17,11 +17,17 @@
            url: https://github.com/dbuhtiyarov/yo_ansible_roles.git
            branches:
              - ${BRANCH}
-           subdir: roles
+           basedir: roles
+           wipe-workspace: false
+           skip-tag: true
+           clean: true
       - git:
            url: https://github.com/dbuhtiyarov/packer.git
            branches:
              - master
+           wipe-workspace: false
+           skip-tag: true
+           clean: true
     builders:
       - shell: |
           echo "hello world1"
