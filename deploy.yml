@@ -11,6 +11,8 @@
            url: https://github.com/dbuhtiyarov/yo_ansible.git
            branches:
              - master
+           wipe-workspace: false
+           skip-tag: true
     wrappers:
        - ansicolor:
            colormap: xterm
