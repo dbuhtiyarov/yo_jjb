@@ -23,7 +23,7 @@
            mask-password-params: true
     builders:
        - shell: |
-         export ANSIBLE_FORCE_COLOR=true
-         unset LD_LIBRARY_PATH
-         ansible-playbook -i "localhost," -c local deploy.yml -u tomcat -vvv \
-         -e ami_id=${AMI_NAME} 
+            export ANSIBLE_FORCE_COLOR=true
+            unset LD_LIBRARY_PATH
+            ansible-playbook -i "localhost," -c local deploy.yml -u tomcat -vvv \
+            -e ami_id=${AMI_NAME} 
