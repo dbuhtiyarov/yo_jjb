@@ -1,0 +1,29 @@
+- job:
+    name: yserver-stage-deploy1
+    description: 'Do not edit this job through the web!'
+    project-type: freestyle
+    parameters:
+      - string:
+           name: AMI_NAME
+           description: "Please specify AMI-ID"
+    scm:
+      - git:
+           url: https://github.com/dbuhtiyarov/yo_ansible.git
+           branches:
+             - master
+    wrappers:
+       - ansicolor:
+           colormap: xterm
+       - inject:
+           properties-content: |
+             AWS_ACCESS_KEY_ID=$PACKER_AWS_ACCESS_KEY_ID
+             AWS_SECRET_ACCESS_KEY=$PACKER_AWS_SECRET_ACCESS_KEY
+       - inject-passwords:
+           global: true
+           mask-password-params: true
+    builders:
+       - shell: |
+         export ANSIBLE_FORCE_COLOR=true
+         unset LD_LIBRARY_PATH
+         ansible-playbook -i "localhost," -c local deploy.yml -u tomcat -vvv \
+         -e ami_id=${AMI_NAME} 
